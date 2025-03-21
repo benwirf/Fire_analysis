@@ -41,7 +41,7 @@ def transform_geom(g):
 
 def createFsLayerByFy(fy):
     fy_layers = []
-    src_folder = r'/home/ben/DITT/Central_Australia_Fire_Mapping/Fire_Scars_Archive/geopackages'
+    src_folder = r'Central_Australia_Fire_Mapping/Fire_Scars_Archive/geopackages'
         
     for file in os.scandir(src_folder):
         if file.name.split('.')[1] == 'gpkg':
@@ -65,7 +65,7 @@ def createFsLayerByFy(fy):
     feat_list = []
     id = 1
     
-    study_extent_layer_path = r'/home/ben/DITT/Central_Australia_Fire_Mapping/extent_wgs84.gpkg|layername=extent_gda_94'
+    study_extent_layer_path = r'Central_Australia_Fire_Mapping/extent_wgs84.gpkg|layername=extent_gda_94'
     study_extent_layer = QgsVectorLayer(study_extent_layer_path, 'study_extent', 'ogr')
     study_extent_geom = [ft for ft in study_extent_layer.getFeatures()][0].geometry()# There is only one feature in this layer    
     
@@ -116,7 +116,7 @@ def createFsLayerByFy(fy):
         feat_list.append(feat)
         id+=1
         
-    output_folder = r'/home/ben/DITT/Central_Australia_Fire_Mapping/Sth_NT_Fire_Scars_by_FY'
+    output_folder = r'Central_Australia_Fire_Mapping/Sth_NT_Fire_Scars_by_FY'
     output_layer_name = f'Firescars_{fy}.gpkg'
     output_path = os.path.join(output_folder, output_layer_name)
     
