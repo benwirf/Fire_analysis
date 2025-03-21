@@ -12,7 +12,7 @@ xform = QgsCoordinateTransform(property_lyr.crs(), QgsCoordinateReferenceSystem(
 
 search_rect = xform.transform(property_lyr.extent()) # Rectangle transformed to epsg:4283 (GDA94)
 
-firescar_folder = 'C:\\Users\\qw2\\Desktop\\Fire_Scars_Archive\\geopackages'
+firescar_folder = 'Fire_Scars_Archive\\geopackages'
 
 all_fires= []
 
